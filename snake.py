@@ -22,7 +22,27 @@ class cobra():
     def novo_seguimento(self, pos):
         nova_cobra = Turtle()
         nova_cobra.shape('square')
-        nova_cobra.color('black')
+        nova_cobra.color(random.choice(self.sorteia_cores()))
         nova_cobra.penup()
         nova_cobra.goto(pos)
         self.corpo.append(nova_cobra)
+    
+    def sorteia_cores(self):
+        cores = ['brown','yellow','blue','purple','pink','blue','red','white','white','cyan','grey']
+        return cores
+    
+    def mover_direita(self):
+        if self.cabeca.heading() !=    self.ESQUERDA:
+            self.cabeca.setheading(self.DIREITA)
+            
+    def mover_esquerda(self):
+        if self.cabeca.heading() !=    self.DIREITA:
+            self.cabeca.setheading(self.ESQUERDA)
+
+    def mover_cima(self):
+        if self.cabeca.heading() !=    self.BAIXO:
+            self.cabeca.setheading(self.CIMA)
+
+    def mover_baixo(self):
+        if self.cabeca.heading() !=    self.cima:
+            self.cabeca.setheading(self.BAIXO)
