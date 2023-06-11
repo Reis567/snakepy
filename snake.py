@@ -32,6 +32,13 @@ class Cobra():
         nova_cobra.penup()
         nova_cobra.goto(pos)
         self.corpo.append(nova_cobra)
+    def crescer_cobra(self):
+        # Obtém a posição do último segmento da cobra
+        last_segment = self.corpo[-1]
+        x, y = last_segment.position()
+
+        # Adiciona um novo segmento à cobra na posição do último segmento
+        self.novo_seguimento((x, y))
     
     def sorteia_cores(self):
         cores = ['brown','yellow','blue','purple','pink','blue','red','white','white','cyan','grey']
