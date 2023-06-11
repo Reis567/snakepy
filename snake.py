@@ -1,8 +1,8 @@
 import random
 from turtle import Turtle
 
-class cobra():
-    POS_INICIAL = [(0,0) , (0,20)]
+class Cobra():
+    POS_INICIAL = [(0,0) , (0,20),  (0,40),  (0,60)]
     VEL = 10
     DIREITA = 0
     ESQUERDA = 180
@@ -13,6 +13,12 @@ class cobra():
         self.corpo = []
         self.inicializar_cobra()
         self.cabeca = self.corpo[0]
+    
+    def mover(self):
+        for index in range(len(self.corpo)-1 , 0 ,-1):
+            novo_x , novo_y = self.corpo[index -1].xcor(), self.corpo[index -1].ycor()
+            self.corpo[index].goto(novo_x, novo_y)
+        self.cabeca.forward(self.VEL)
 
 
     def inicializar_cobra(self):
@@ -34,7 +40,7 @@ class cobra():
     def mover_direita(self):
         if self.cabeca.heading() !=    self.ESQUERDA:
             self.cabeca.setheading(self.DIREITA)
-            
+
     def mover_esquerda(self):
         if self.cabeca.heading() !=    self.DIREITA:
             self.cabeca.setheading(self.ESQUERDA)
@@ -44,5 +50,5 @@ class cobra():
             self.cabeca.setheading(self.CIMA)
 
     def mover_baixo(self):
-        if self.cabeca.heading() !=    self.cima:
+        if self.cabeca.heading() !=    self.CIMA:
             self.cabeca.setheading(self.BAIXO)
