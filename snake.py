@@ -1,5 +1,6 @@
 import random
 from turtle import Turtle
+from score import Pontuacao
 
 class Cobra():
     POS_INICIAL = [(0,0) , (0,20),  (0,40),  (0,60)]  # Posição inicial da cobra
@@ -58,3 +59,13 @@ class Cobra():
     def mover_baixo(self):
         if self.cabeca.heading() != self.CIMA:  # Verifica se a cobra não está indo para cima
             self.cabeca.setheading(self.BAIXO)  # Define a direção da cabeça da cobra para baixo
+
+    def verifica_colisao_corpo(self):
+        for segmento in self.corpo[1:]:
+            if self.cabeca.distance(segmento) < 1:
+                return True
+        return False
+
+
+
+

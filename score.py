@@ -22,3 +22,7 @@ class Pontuacao(Turtle):
         self.penup()  # Levanta a caneta
         self.goto(0, 0)  # Move a tartaruga para a posição (0, 0)
         self.write(f'SCORE: {self.pontuacao - 3} , VOCÊ PERDEU', font=('arial', 30, 'bold'), align='center')  # Escreve a pontuação final e uma mensagem de "você perdeu"
+        
+    def resetar_pontuacao(self):
+        self.pontuacao = 0  # Zera a pontuação
+        self.mostra_ponto()  # Atualiza a exibição da pontuação

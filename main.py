@@ -41,7 +41,13 @@ while jogo_on:
        cobra.cabeca.ycor() > 285:
         pontuacao.game_over()  # Exibe a mensagem de game over
         jogo_on = False  # Encerra o loop do jogo
-        print('Perdeu')
+        print('Perdeu por sair do mapa')
+    
+        # Dentro do loop while jogo_on:
+    if cobra.verifica_colisao_corpo():
+        pontuacao.game_over()
+        jogo_on = False
+        print('Perdeu por encostar no corpo')
 
     cobra.mover()  # Move a cobra
     tela.update()  # Atualiza a tela do jogo
