@@ -28,8 +28,11 @@ Este é um jogo da cobrinha implementado em Python utilizando a biblioteca Turtl
 ## Créditos
 
 Este jogo foi desenvolvido por Reis567.
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 =======
 
 >>>>>>> 1f0b25f4757cb25079840680f3756b0730cc4074
+=======
+>>>>>>> 62c728e04392838326ab1894f5871464ea3b4ebe
